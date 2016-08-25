@@ -1,0 +1,20 @@
+<div ng-controller="profile" ng-init="displayProfile()">
+    <form name="a">
+    <INPUT type="text" ng-model="bio" placeholder="Update Bio!!" required="String"/>
+    <button ng-disabled="a.$invalid" ng-click="create()">Update</button>
+
+    </form>
+   </br>
+   </br>
+    <form style="margin-right: 60%">
+        <b>Bio:</b>{{biotext}}</br></br>
+        <a ui-sref=".following">Following</a>{{fcount1}}</br></br>
+        <a ui-sref=".followers">Followers</a>{{fcount2}}</br></br>
+        <a ui-sref=".tweetCount">Tweet Count</a>{{tcount}}</br></br>
+    </form>
+
+    <div>
+        <div ui-view></div>
+    </div>
+
+</div>

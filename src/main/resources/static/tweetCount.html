@@ -1,0 +1,19 @@
+<div ng-controller="following" ng-init="count()">
+    <form style="margin-left: 40%">
+
+
+        <table>
+
+            <tr ng-repeat="name in table | orderBy:'-date'">
+                <td><b>{{name.msg}}</b></td>
+
+                <td><sub>{{name.email}}</sub></td>
+                </br>
+            </tr>
+
+        </table>
+
+
+    </form>
+    <div class="alert alert-danger" ng-show="error">{{error}}</div>
+</div>

@@ -1,0 +1,11 @@
+<div ng-controller="following" ng-init="displayf()">
+    <form>
+        <div ng-repeat="name in table">
+
+            Name:  <b>{{name.userName}}</b></br></br>
+
+        </div>
+        <div class="alert alert-danger" ng-show="error">{{error}}</div>
+
+    </form>
+</div>
