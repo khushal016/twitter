@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="/webjars/angularjs/1.4.9/angular.js"></script>
+    <script src="angular-ui-router.js"></script>
+    <!--<script src="/bower_components/angular/angular.js"></script>-->
+    <!--<script src="/bower_components/angular/angular.min.js"></script>-->
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <style>
+
+        html, body {
+            background-color: #ecf0f1;
+            margin: 20px auto;
+            display: block;
+            max-width: 550px;
+            height: 100%;
+            text-align: center;
+        }
+
+        body {
+            padding: 20px;
+            position: relative;
+            height: auto;
+            min-height: 100%;
+            /*width: auto;*/
+        }
+
+        h2, a, p, *:before, h1 {
+            font-family: "Helvetica Neue", sans-serif;
+            font-weight: 300;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-top: 0;
+            font-size: 20px;
+            background-color: white;
+            height: 24px;
+            text-align: center;
+            padding: 16px;
+            z-index: 15;
+            border-radius: 4px;
+
+            transition: all 2s ease-out;
+        }
+
+        p {
+            display: block;
+            width: 100%;
+            color: #2c3e50;
+            clear: both;
+        }
+
+        .description {
+            margin-bottom: 70px;
+        }
+
+        button {
+            border: 0;
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+            padding: 5px 5px;
+            transition: background-color 0.2s ease-out;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        button:active, button:hover {
+            outline: none;
+        }
+
+        a {
+            color: #2c3e50;
+            transition: color 0.2s ease-out;
+            /*padding: 5px 10px;*/
+            margin-right: 16px;
+
+        }
+
+        a:hover {
+            color: #2ecc71;
+        }
+        .C
+        {
+            font-size: 18px;
+        }
+
+        .wrapper {
+            border: 1px dashed #95a5a6;
+            height: 56px;
+            margin-top: 16px;
+            border-radius: 4px;
+            position: relative;
+            font-size: 12px;
+        }
+
+        .wrapper p {
+            line-height: 31px;
+        }
+        footer {
+            text-align: center;
+            position:fixed;
+            bottom:0;
+            left:60%;
+            margin-left:-200px;
+
+        }
+
+        footer p {
+            color: #888;
+            font-size: 13px;
+            letter-spacing: .4px;
+        }
+
+        footer a {
+            color: #4a89dc;
+            text-decoration: none;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+        }
+
+        footer a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+
+        footer img {
+            width: 80px;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+        }
+
+        footer img:hover {
+            opacity: .83;
+        }
+
+        footer img:focus, footer a:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body ng-app="myApp">
+<h1 th:inline="text">Welcome  [[${#httpServletRequest.remoteUser}]]!!</h1>
+<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+<script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+<script src="myModule.js"></script>
+<script src="myService.js"></script>
+<script src="myController.js"></script>
+<script src="leaflet-routing-machine.js"></script>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="first">Twitter</a>
+        </div>
+        <!--<div>-->
+        <ul class="nav navbar-nav">
+            <li class="active"><a ui-sref="first">Home</a></li>
+            <li><a ui-sref="follow">Follow</a></li>
+            <li><a ui-sref="profile">Profile</a></li>
+            <li><a ui-sref="map">Map</a></li>
+            <li><a th:href="@{/logout}">Logout</a></li>
+        </ul>
+
+    </div>
+</nav>
+<div>
+    <div ui-view="a"></div>
+</div>
+
+<!--</div>-->
+</body>
+</html>

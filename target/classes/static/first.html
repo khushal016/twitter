@@ -1,0 +1,30 @@
+<div ng-controller="tweet" ng-init="display()">
+    <form name="a">
+        <INPUT type="text" ng-model="msg" placeholder="What's Happening!!" required="String"/>
+        <button ng-disabled="a.$invalid" ng-click="send()">Tweet</button>
+        {{name1}}</br>
+    </form>
+
+    <form style="margin-left: 40%">
+
+
+        <table align="centre">
+            <!--<th> Inventory Name</th>-->
+            <!--<th> Cost</th>-->
+            <!--<th> Unit</th>-->
+            <!--<th> Opening Balance</th>-->
+            <!--<th> Current Balance</th>-->
+            <!--<th> Dimension</th>-->
+            <tr ng-repeat="name in table.data | orderBy:'-date'">
+                <td><b>{{name.msg}}</b></td>
+                <td><sub>{{name.email}}</sub></td>
+                <td><sub>{{name.date | date:'dd-MM HH:mm'}}</sub></td>
+                </br>
+            </tr>
+
+        </table>
+
+
+    </form>
+
+</div>
