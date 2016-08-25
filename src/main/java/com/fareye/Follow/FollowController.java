@@ -58,6 +58,7 @@ public class FollowController {
     ResponseEntity<?> display() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String user = authentication.getName();
+
         if(followRepository.findByFname(userRepository.findByEmail(user).getName()).size()==0)
             return new ResponseEntity<>(new ErrorMessage("No Followers!!"), HttpStatus.BAD_REQUEST);
 

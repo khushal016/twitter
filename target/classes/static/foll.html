@@ -1,0 +1,22 @@
+
+<div ng-controller="follow">
+    <form>
+        <h1>Who to follow</h1>
+
+        <!--<LABEL>Search </LABEL>-->
+
+
+        Search: <input type='text' ng-model='follow' list="a" required/>
+        <datalist  id="a">
+        <option ng-repeat="name in values" value="{{name.name}}">
+            {{name.name}}
+        </option>
+        </datalist>
+
+        <!--<input type="button" value="Follow" ng-click="foll()">-->
+        <button ng-click="foll()">Follow</button>
+        <div class="alert alert-success" ng-show="name1">{{name1}}</div>
+        <div class="alert alert-danger" ng-show="error">{{error}}</div>
+
+    </form>
+</div>
